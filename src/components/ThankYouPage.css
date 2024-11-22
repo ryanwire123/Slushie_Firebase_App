@@ -1,0 +1,23 @@
+/* src/components/ThankYouPage.css */
+
+.thank-you-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+  }
+  
+  .thank-you-page h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .thank-you-page p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  

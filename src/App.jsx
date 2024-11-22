@@ -1,0 +1,46 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { UserProvider } from './context/UserContext'; 
+import Navbar from './components/Navbar';
+import HomePage from './components/HomePage';
+import LoginPage from './components/LoginPage';
+import RegisterPage from './components/RegisterPage';
+import OrderPage from './components/OrderPage';
+import MockPayment from './components/MockPayment';
+import ThankYouPage from './components/ThankYouPage';
+import UserOrdersPage from './components/UserOrdersPage';
+import GuestCheckoutPage from './components/GuestCheckoutPage';
+import viteLogo from '/vite.svg';
+import reactLogo from './assets/react.svg';
+import './App.css';
+
+function App() {
+  return (
+    <UserProvider> 
+      <div className="logos">
+        <a href="https://vite.dev" target="_blank" rel="noopener noreferrer">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/order" element={<OrderPage />} />
+          <Route path="/guest-checkout" element={<GuestCheckoutPage />} />
+          <Route path="/mock-payment" element={<MockPayment />} />
+          <Route path="/thank-you" element={<ThankYouPage />} />
+          <Route path="/user-orders" element={<UserOrdersPage />} />
+        </Routes>
+      </Router>
+    </UserProvider> 
+  );
+}
+
+export default App;
