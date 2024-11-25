@@ -1,20 +1,25 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useContext } from 'react';
 import { auth } from '../firebase/firebaseConfig';
 
-export const UserContext = createContext();
+// Create a Context to store customer data
+export const CustomerContext = createContext();
 
-export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+export const CustomerProvider = ({ children }) => {
+  const [customer, setCustomer] = useState(null);
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(setUser);
+    // Subscribe to auth state changes (user login/logout)
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setCustomer(user);  // Update the customer state based on authentication status
+    });
     
+    // Cleanup the subscription when the component unmounts
     return () => unsubscribe();
   }, []);
 
   return (
-    <UserContext.Provider value={{ user, setUser }}>
+    <CustomerContext.Provider value={{ customer, setCustomer }}>
       {children}
-    </UserContext.Provider>
+    </CustomerContext.Provider>
   );
 };
