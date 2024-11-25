@@ -1,33 +1,51 @@
 /* src/components/LoginPage.css */
 
+/* Centered Div Styling */
 div {
     text-align: center;
     margin-top: 50px;
   }
   
+  /* Input Styling */
   input {
     display: block;
     margin: 10px auto;
     padding: 10px;
     width: 80%;
     max-width: 400px;
+    border: 1px solid #ccc; /* Light border to define input fields */
+    border-radius: 5px;
+    font-size: 1rem;
   }
   
+  /* Button Styling */
   button {
     margin-top: 20px;
     padding: 10px 20px;
     background-color: #007bff;
-    color: white;
+    color: #ffffff; /* Dark button text to stand out */
     border: none;
     cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
   }
   
+  /* Disabled Button Styling */
   button:disabled {
     background-color: #6c757d;
   }
   
+  /* Error Message Styling */
   p {
-    color: red;
+    color: #e74c3c; /* Soft red color for error messages */
     font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  /* Optional: Input Focus Effect */
+  input:focus {
+    border-color: #007bff; /* Blue border on focus */
+    outline: none;
   }
   
