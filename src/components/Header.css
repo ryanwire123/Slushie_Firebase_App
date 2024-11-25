@@ -1,0 +1,49 @@
+/* Header Styling */
+.app-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8bdfa7; /* Light yellow background */
+    padding: 20px;
+    color: #333; /* Dark text color for readability */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Header Content (Logo + Title) */
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+/* App Logo Styling */
+.app-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+/* App Title Styling */
+.app-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #933996; /* Purple color for the app title */
+}
+
+/* Header Hover Effect */
+.app-header:hover {
+    background-color: #8bdfa7; /* Green background on hover for the header */
+}
+
+/* Optional Border/Accent for Header */
+.app-header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #933996; /* Purple accent bar at the top */
+}
