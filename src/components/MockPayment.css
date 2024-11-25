@@ -1,35 +1,42 @@
 /* src/components/MockPayment.css */
 
+/* Centered Mock Payment Container */
 .mock-payment {
     text-align: center;
     margin-top: 50px;
   }
   
+  /* Header Styling */
   h2 {
-    color: #333;
+    color: #333; /* Dark grey for header text */
     font-size: 24px;
   }
   
+  /* Paragraph Styling */
   p {
     font-size: 18px;
     margin-bottom: 20px;
+    color: #555; /* Softer grey for paragraph text */
   }
   
+  /* Button Styling */
   button {
     padding: 10px 20px;
-    background-color: #28a745;
-    color: white;
+    background-color: #28a745; /* Green button background */
+    color: #fff; /* White text for the button to contrast the green */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
   }
   
+  /* Button Hover Effect */
   button:hover {
-    background-color: #218838;
+    background-color: #218838; /* Slightly darker green for hover */
   }
   
+  /* Button Active Effect */
   button:active {
-    background-color: #1e7e34;
+    background-color: #1e7e34; /* Even darker green when button is clicked */
   }
   
