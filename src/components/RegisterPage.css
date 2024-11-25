@@ -1,5 +1,6 @@
 /* src/components/RegisterPage.css */
 
+/* Register Page Container */
 .register-page {
     display: flex;
     flex-direction: column;
@@ -7,37 +8,104 @@
     padding: 20px;
     max-width: 400px;
     margin: 0 auto;
-    background-color: #f4f4f4;
+    background-color: #f3db97; /* Light yellow background */
     border-radius: 10px;
-  }
-  
-  .register-page h2 {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    color: #333; /* Dark text for readability */
+}
+
+/* Header Styling */
+.register-page h2 {
     margin-bottom: 20px;
-  }
-  
-  .register-page input {
+    color: #933996; /* Purple highlight for header */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Input Fields Styling */
+.register-page input {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
     border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .register-page button {
+    border: 1px solid #933996; /* Purple border for inputs */
+    background-color: #fff; /* White background for inputs */
+    color: #333; /* Dark text inside input for readability */
+}
+
+/* Input Labels Styling */
+.register-page label {
+    width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #933996; /* Purple text for labels */
+    font-size: 14px;
+}
+
+/* Button Styling */
+.register-page button {
     padding: 10px 15px;
-    background-color: #4CAF50;
-    color: white;
+    background-color: #933996; /* Purple button color */
+    color: #fff; /* White text for button */
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .register-page button:hover {
-    background-color: #45a049;
-  }
-  
-  .register-page button:disabled {
-    background-color: #ccc;
+    transition: background-color 0.3s ease;
+}
+
+/* Button Hover Effect */
+.register-page button:hover {
+    background-color: #8b72c4; /* Slightly darker purple on hover */
+}
+
+/* Disabled Button Styling */
+.register-page button:disabled {
+    background-color: #666; /* Darker grey for disabled button */
     cursor: not-allowed;
-  }
-  
+}
+
+/* Input Focus Effect */
+.register-page input:focus {
+    border: 1px solid #8bdfa7; /* Green border on focus for better visibility */
+    outline: none; /* Remove default outline */
+}
+
+/* Accessibility Improvement: Smooth color transition */
+.register-page * {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Additional spacing for the inputs */
+.register-page .input-group {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Styling for the form submission container */
+.register-page .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Styling for error messages */
+.register-page .error {
+    color: #ff6f61; /* Red color for error messages */
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Highlight color for important elements */
+.register-page .highlight {
+    color: #8bdfa7; /* Green for highlights */
+}
+
+/* Add padding and margin for sections with a dark background */
+.register-page .section-dark {
+    background-color: #933996; /* Purple background for sections */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
