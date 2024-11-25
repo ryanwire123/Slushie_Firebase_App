@@ -1,5 +1,6 @@
 /* src/components/ThankYouPage.css */
 
+/* Thank You Page Container */
 .thank-you-page {
     display: flex;
     flex-direction: column;
@@ -7,17 +8,52 @@
     padding: 20px;
     max-width: 600px;
     margin: 0 auto;
-    background-color: #f4f4f4;
+    background-color: #2d2d2d; /* Dark background for better contrast */
     border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    color: #ddd; /* Soft grey text for better readability */
   }
   
+  /* Header Styling */
   .thank-you-page h2 {
     font-size: 2rem;
     margin-bottom: 20px;
+    color: #ddd; /* Soft grey color for header */
+    font-weight: bold;
   }
   
+  /* Paragraph Styling */
   .thank-you-page p {
     font-size: 1.2rem;
-    color: #555;
+    color: #ccc; /* Slightly lighter grey for text */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Button Styling (if any is present) */
+  .thank-you-page button {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green button color */
+    color: #ddd; /* Grey text color for button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Button Hover Effect */
+  .thank-you-page button:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+  }
+  
+  /* Disabled Button Styling */
+  .thank-you-page button:disabled {
+    background-color: #666; /* Darker grey for disabled button */
+    cursor: not-allowed;
+  }
+  
+  /* Accessibility Improvement: Smooth color transition */
+  .thank-you-page * {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
   }
   
