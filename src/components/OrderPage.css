@@ -1,5 +1,6 @@
 /* src/components/OrderPage.css */
 
+/* Order Page Container */
 .order-page {
     display: flex;
     flex-direction: column;
@@ -7,38 +8,61 @@
     padding: 20px;
     max-width: 500px;
     margin: 0 auto;
-    background-color: #f4f4f4;
+    background-color: #2d2d2d; /* Darker background for better contrast */
     border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    color: #ddd; /* Soft grey text for better readability */
   }
   
+  /* Label Styling */
   .order-page label {
     margin: 10px 0 5px;
     font-weight: bold;
+    color: #ddd; /* Soft grey color for labels */
   }
   
+  /* Select Element Styling */
   .order-page select {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     margin: 10px 0;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #666; /* Darker border for select */
+    background-color: #444; /* Dark background for select */
+    color: #ddd; /* Soft grey text inside select */
   }
   
+  /* Button Styling */
   .order-page button {
     padding: 10px 15px;
-    background-color: #4CAF50;
-    color: white;
+    background-color: #4CAF50; /* Green button color */
+    color: #ddd; /* Grey text color for button */
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
   }
   
+  /* Button Hover Effect */
   .order-page button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Slightly darker green on hover */
   }
   
+  /* Disabled Button Styling */
   .order-page button:disabled {
-    background-color: #ccc;
+    background-color: #666; /* Darker grey for disabled button */
     cursor: not-allowed;
+  }
+  
+  /* Input & Select Focus Effect */
+  .order-page input:focus,
+  .order-page select:focus {
+    border: 1px solid #4CAF50; /* Green border on focus for better visibility */
+    outline: none; /* Remove default outline */
+  }
+  
+  /* Improved Accessibility: Add a subtle color transition */
+  .order-page * {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
   }
   
