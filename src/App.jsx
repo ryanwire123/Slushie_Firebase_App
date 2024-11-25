@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { UserProvider } from './context/UserContext'; 
+import { CustomerProvider } from './context/UserContext'; 
+import Header from './components/Header';
 import Navbar from './components/Navbar';
 import HomePage from './components/HomePage';
 import LoginPage from './components/LoginPage';
@@ -16,17 +17,9 @@ import './App.css';
 
 function App() {
   return (
-    <UserProvider> 
-      <div className="logos">
-        <a href="https://vite.dev" target="_blank" rel="noopener noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
+    <CustomerProvider> 
       <Router>
+        <Header />
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -39,7 +32,7 @@ function App() {
           <Route path="/user-orders" element={<UserOrdersPage />} />
         </Routes>
       </Router>
-    </UserProvider> 
+    </CustomerProvider> 
   );
 }
 
