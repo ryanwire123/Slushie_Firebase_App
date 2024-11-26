@@ -1,3 +1,5 @@
+// src/components/Navbar.jsx
+
 import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { CustomerContext } from '../context/UserContext'; // Updated context name
@@ -60,3 +62,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
