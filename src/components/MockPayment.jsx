@@ -1,3 +1,5 @@
+// src/components/MockPayment.jsx
+
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { db } from '../firebase/firebaseConfig';
