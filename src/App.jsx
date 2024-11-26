@@ -1,3 +1,5 @@
+// src/App.jsx
+
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { CustomerProvider } from './context/UserContext'; 
@@ -25,11 +27,11 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/customer-orders" element={<UserOrdersPage />} />
           <Route path="/order" element={<OrderPage />} />
           <Route path="/guest-checkout" element={<GuestCheckoutPage />} />
           <Route path="/mock-payment" element={<MockPayment />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
-          <Route path="/user-orders" element={<UserOrdersPage />} />
         </Routes>
       </Router>
     </CustomerProvider> 
@@ -37,3 +39,4 @@ function App() {
 }
 
 export default App;
+
