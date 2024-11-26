@@ -1,10 +1,11 @@
+// src/components/RegisterPage.jsx
+
 import React, { useState } from 'react';
 import { auth } from '../firebase/firebaseConfig';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import { db } from '../firebase/firebaseConfig'; // Firebase Firestore setup
-import { collection, addDoc } from 'firebase/firestore';
-
+import { collection, doc, setDoc, addDoc } from 'firebase/firestore';
 import './RegisterPage.css'; 
 
 const RegisterPage = () => {
@@ -22,18 +23,17 @@ const RegisterPage = () => {
         customerID: userCredential.user.uid,
         customerEmail: email,
         customerName: name,
-        customerAddress: address,
-        customerPassword: password, // Storing password is not recommended, but you can hash it if needed
+        customerAddress: address, // Ensure address is being set here
+        customerPassword: password, // Storing passwords in plain text is not recommended
       };
   
       // Save customer data to Firestore in the 'customers' collection
-      await addDoc(collection(db, 'customers'), customer);  // Saving to Firestore
+      await setDoc(doc(db, 'customers', userCredential.user.uid), customer); // Use setDoc for consistent user IDs
   
-      console.log("Customer Created:", customer);
-  
-      navigate('/order'); // Navigate to the order page after successful registration
+      console.log('Customer created:', customer);
+      navigate('/order'); // Navigate to order page
     } catch (error) {
-      console.error("Error during registration:", error.message);
+      console.error('Error during registration:', error.message);
     }
   };
   
@@ -77,3 +77,4 @@ const RegisterPage = () => {
 };
 
 export default RegisterPage;
+
