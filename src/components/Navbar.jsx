@@ -2,24 +2,24 @@
 
 import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { CustomerContext } from '../context/UserContext'; // Updated context name
+import { CustomerContext } from '../context/UserContext'; 
 import { auth } from '../firebase/firebaseConfig';
-import { db } from '../firebase/firebaseConfig'; // Firebase Firestore setup
+import { db } from '../firebase/firebaseConfig';
 import { collection, addDoc } from 'firebase/firestore';
 
 import './Navbar.css'; 
 
 const Navbar = () => {
-  const { customer } = useContext(CustomerContext);  // Changed 'user' to 'customer'
+  const { customer } = useContext(CustomerContext);  
   const [customerName, setCustomerName] = useState('');
 
   useEffect(() => {
     if (customer) {
       const fetchCustomerName = async () => {
         try {
-          const customerDoc = await db.collection('customers').doc(customer.customerID).get(); // Changed from 'users' to 'customers'
+          const customerDoc = await db.collection('customers').doc(customer.customerID).get(); 
           if (customerDoc.exists) {
-            setCustomerName(customerDoc.data().name); // Assuming 'name' is in Firestore
+            setCustomerName(customerDoc.data().name); 
           }
         } catch (error) {
           console.error("Error fetching customer data:", error);
@@ -33,10 +33,11 @@ const Navbar = () => {
     auth.signOut();
   };
 
+
   return (
     <div className="navbar-container">
       {/* Welcome message above the navbar */}
-      {customer && <div className="welcome-message">Welcome, {customerName || 'Customer'}</div>}
+      {customer && <div className="welcome-message">Welcome, {customer.customerName}</div>}
   
       <nav className="navbar">
         <div className="navbar-links">
@@ -49,7 +50,9 @@ const Navbar = () => {
           ) : (
             <Link to="/customer-orders">My Orders</Link>
           )}
-          <Link to="/order">Order</Link>
+           <Link to={customer ? "/order" : "/guest-checkout"} className="cta-button">
+            Order
+          </Link>
         </div>
         {customer && (
           <div className="logout-container">
@@ -62,4 +65,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
 
