@@ -8,17 +8,17 @@
     padding: 20px;
     max-width: 500px;
     margin: 0 auto;
-    background-color: #2d2d2d; /* Darker background for better contrast */
+    background-color: #fde0ff; /* Darker background for better contrast */
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-    color: #ddd; /* Soft grey text for better readability */
+    color: #ffffff; /* Soft grey text for better readability */
   }
   
   /* Label Styling */
   .order-page label {
     margin: 10px 0 5px;
     font-weight: bold;
-    color: #ddd; /* Soft grey color for labels */
+    color: #933996; /* Soft grey color for labels */
   }
   
   /* Select Element Styling */
@@ -29,14 +29,14 @@
     border-radius: 5px;
     border: 1px solid #666; /* Darker border for select */
     background-color: #444; /* Dark background for select */
-    color: #ddd; /* Soft grey text inside select */
+    color: #ffffff; /* Soft grey text inside select */
   }
   
   /* Button Styling */
   .order-page button {
     padding: 10px 15px;
-    background-color: #4CAF50; /* Green button color */
-    color: #ddd; /* Grey text color for button */
+    margin-top: 20px;
+    color: #ffffff; /* Grey text color for button */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -57,7 +57,6 @@
   /* Input & Select Focus Effect */
   .order-page input:focus,
   .order-page select:focus {
-    border: 1px solid #4CAF50; /* Green border on focus for better visibility */
     outline: none; /* Remove default outline */
   }
   
@@ -65,4 +64,6 @@
   .order-page * {
     transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
   }
+  
+
   
