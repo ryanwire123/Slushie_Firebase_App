@@ -11,6 +11,21 @@ const UserOrdersPage = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // Mapping flavor IDs to names
+  const flavorMap = {
+    f1av1: 'Vanilla',
+    f1av2: 'Chocolate',
+    f1av3: 'Strawberry',
+    f1av4: 'Blueberry',
+    f1av5: 'Raspberry',
+  };
+
+  // Mapping branch IDs to names and addresses
+  const branchMap = {
+    b1: '123 Monmouth Street',
+    b2: '234 Monmouth Street',
+  };
+
   useEffect(() => {
     const fetchOrders = async () => {
       if (!customer) return;  // Only fetch orders if customer is logged in
@@ -19,7 +34,6 @@ const UserOrdersPage = () => {
 
       try {
         const ordersRef = collection(db, 'orders');
-        // Assuming the customer ID in orders is the Firebase user's UID
         const q = query(ordersRef, where('customerID', '==', customer.uid));  // Use customer.uid
         const querySnapshot = await getDocs(q);
 
@@ -38,7 +52,7 @@ const UserOrdersPage = () => {
     };
 
     fetchOrders();
-  }, [customer]);  // Dependency on customer context
+  }, [customer]); // Dependency on customer context
 
   if (loading) {
     return <p>Loading orders...</p>;
@@ -54,20 +68,24 @@ const UserOrdersPage = () => {
       {orders.length === 0 ? (
         <p>No past orders found</p>
       ) : (
-        <ul>
+        <div className="orders-list">
           {orders.map((order, index) => (
-            <li key={index}>
+            <div key={index} className="order-box">
               <p><strong>Order ID:</strong> {order.id}</p>
-              <p><strong>Branch:</strong> {order.branchID}</p>  {/* Assuming branchID exists */}
-              <p><strong>Flavors:</strong> 
-                {order.flavor1ID && `Flavor 1: ${order.flavor1ID}`}
-                {order.flavor2ID && `, Flavor 2: ${order.flavor2ID}`}
-                {order.flavor3ID && `, Flavor 3: ${order.flavor3ID}`}
+              <p><strong>Branch:</strong> {branchMap[order.branchID]}</p>
+              <p><strong>Flavors: </strong> 
+                {[
+                  flavorMap[order.flavor1ID],
+                  flavorMap[order.flavor2ID],
+                  flavorMap[order.flavor3ID]
+                ]
+                .filter(Boolean) // Remove null/undefined flavors
+                .join(', ') // Join the flavors with commas
+                }
               </p>
-              <p><strong>Status:</strong> {order.status || 'Pending'}</p> {/* Assuming 'status' might be in the order */}
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );
