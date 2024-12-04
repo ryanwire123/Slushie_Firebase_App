@@ -1,16 +1,19 @@
 /* Navbar Container Styling */
 .navbar-container {
   width: 100%;
-  padding: 10px;
-  background-color: #8bdfa7; /* Greenish background for the container */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  background-color: #e9bef3; /* Greenish background for the container */
+  padding-bottom: 0px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .5); 
+  
 }
 
 /* Welcome Message Above Navbar */
 .welcome-message {
   color: #933996; /* Purple color for the welcome message */
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  font-family: 'Verdana', sans-serif;
   text-align: center;
+  padding-top: 20px;
   margin-bottom: 10px; /* Space between message and navbar */
 }
 
@@ -19,9 +22,9 @@
   display: flex;
   flex-direction: column; /* Stack links and logout button */
   align-items: center;
-  background-color: #8bdfa7; /* Greenish background for navbar */
-  padding: 10px;
-  border-radius: 5px; /* Rounded corners for the navbar */
+  background-color: #e9bef3; /* Greenish background for navbar */
+  padding: 0;
+  border-radius: 0px; /* Rounded corners for the navbar */
 }
 
 /* Navbar Links Styling */
@@ -29,6 +32,9 @@
   display: flex;
   justify-content: center; /* Center the links */
   gap: 20px; /* Add spacing between links */
+  color: #933996;
+  font-size: 1.5rem;
+  font-family: 'Verdana', sans-serif; 
   margin-bottom: 10px; /* Space between links and logout button */
 }
 
@@ -36,6 +42,7 @@
 .navbar a {
   color: #933996; /* Purple color for links */
   text-decoration: none;
+  font-family: 'Verdana', sans-serif;
   padding: 10px 15px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -43,7 +50,7 @@
 /* Navbar Link Hover Effect */
 .navbar a:hover {
   background-color: #933996; /* Purple background for hover effect */
-  color: #8bdfa7; /* Green text on hover */
+  color: #e9bef3; /* Green text on hover */
   border-radius: 5px;
 }
 
@@ -52,6 +59,7 @@
   display: flex;
   justify-content: center; /* Center the logout button */
   width: 100%;
+  margin-bottom: 20px;
 }
 
 .navbar button {
@@ -62,6 +70,8 @@
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
   border-radius: 5px;
+  margin-bottom: 0px;
+  font-family: 'Verdana', sans-serif;
 }
 
 /* Navbar Button Hover Effect */
@@ -69,3 +79,4 @@
   background-color: #ddd; /* Light grey background on hover */
   color: #933996; /* Dark text on hover */
 }
+
