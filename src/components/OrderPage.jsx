@@ -47,9 +47,9 @@ const OrderPage = () => {
 
     // Construct the order object
     const order = {
-      customerID: customer.uid, // Use UID from context
+      customerID: customer && customer.uid ? customer.uid : 'guest', // Set to 'guest' if customer is a guest
       price: 10, // Example price, could be dynamic
-      deliveryAddress: customer.customerAddress, // Use customer address from context
+      deliveryAddress: customer ? customer.customerAddress : 'Guest Address', // Use customer address from context, default if guest
       branchID: selectedBranch, // Branch ID, e.g., 'b1' or 'b2'
       flavor1ID: selectedFlavors[0] ? flavorMap[selectedFlavors[0]] : null, // First flavor ID
       flavor2ID: selectedFlavors[1] ? flavorMap[selectedFlavors[1]] : null, // Second flavor ID
@@ -78,16 +78,22 @@ const OrderPage = () => {
   const handleFlavorChange = (flavor) => {
     setSelectedFlavors((prevFlavors) => {
       if (prevFlavors.includes(flavor)) {
+        // Remove flavor if it's already selected
         return prevFlavors.filter((f) => f !== flavor);
-      } else {
+      } else if (prevFlavors.length < 3) {
+        // Add flavor if less than 3 flavors are selected
         return [...prevFlavors, flavor];
+      } else {
+        // Alert or restrict if trying to select more than 3 flavors
+        alert('You can only select up to 3 flavors.');
+        return prevFlavors;
       }
     });
   };
 
   return (
-    <div>
-      <h2>Order Drink</h2>
+    <div className="order-page">
+      <h2>Order Slushie</h2>
       <div>
         <label>Select Branch:</label>
         <select onChange={(e) => setSelectedBranch(e.target.value)} value={selectedBranch}>
@@ -97,7 +103,7 @@ const OrderPage = () => {
         </select>
       </div>
       <div>
-        <label>Select Flavors (at least one flavor is required):</label>
+        <label>Select up to Three Flavors:</label>
         <div className="flavor-selection">
           {['Vanilla', 'Chocolate', 'Strawberry', 'Blueberry', 'Raspberry'].map((flavor) => (
             <div key={flavor} className="flavor-bar">
@@ -119,3 +125,4 @@ const OrderPage = () => {
 };
 
 export default OrderPage;
+
