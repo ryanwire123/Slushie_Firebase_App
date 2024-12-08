@@ -3,7 +3,7 @@
 /* Centered Div Styling */
 div {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 30px; 
   }
   
   /* Input Styling */
@@ -13,17 +13,17 @@ div {
     padding: 10px;
     width: 80%;
     max-width: 400px;
-    border: 1px solid #ccc; /* Light border to define input fields */
+    border: 1px solid #933996; /* Light border to define input fields */
     border-radius: 5px;
     font-size: 1rem;
   }
   
   /* Button Styling */
   button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #ffffff; /* Dark button text to stand out */
+    margin-top: 0px;
+    padding: 0px 0px;
+    background-color: #933996;
+    color: #933996; /* Dark button text to stand out */
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -32,20 +32,22 @@ div {
   
   /* Disabled Button Styling */
   button:disabled {
-    background-color: #6c757d;
+    background-color: #933996;
   }
   
   /* Error Message Styling */
   p {
-    color: #e74c3c; /* Soft red color for error messages */
+    color: #933996; /* Soft red color for error messages */
     font-size: 14px;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 0px;
   }
   
   /* Optional: Input Focus Effect */
   input:focus {
-    border-color: #007bff; /* Blue border on focus */
+    border-color: #933996; /* Blue border on focus */
     outline: none;
   }
+  
+
   
