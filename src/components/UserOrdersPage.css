@@ -2,10 +2,11 @@
 
 /* User Orders Page Container */
 .user-orders-page {
-  padding: 20px;
+  padding: 10px;
   max-width: 800px;
+  font-family: 'Verdana', sans-serif;
   margin: 0 auto;
-  background-color: #2d2d2d; /* Dark background for better contrast */
+  background-color: #fde0ff; /* Dark background for better contrast */
   border-radius: 8px;
   color: #ddd; /* Soft grey text for better readability */
 }
@@ -14,9 +15,38 @@
 .user-orders-page h2 {
   font-size: 2rem;
   text-align: center;
+  font-family: 'Verdana', sans-serif;
   margin-bottom: 20px;
   color: #ddd; /* Soft grey header text */
   font-weight: bold;
+}
+
+/* Orders List Container */
+.orders-list {
+  display: flex;
+  font-family: 'Verdana', sans-serif;
+  flex-direction: column;
+  gap: 10px; /* Space between each order box */
+}
+
+/* Individual Order Box Styling */
+.order-box {
+  padding: 15px;
+  background-color: #fde0ff; /* Slightly lighter background for each order box */
+  border-radius: 8px; /* Rounded corners for each order box */
+  box-shadow: 0 2px 5px #fde0ff; /* Subtle shadow for depth */
+  transition: transform 0.2s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for each order box */
+.order-box:hover {
+  transform: translateY(-5px); /* Slight lift effect */
+}
+
+/* Paragraph inside each order box */
+.order-box p {
+  margin: 5px 0;
+  color: #6b3f7d; /* Slightly lighter grey for text */
 }
 
 /* List Container */
@@ -25,26 +55,11 @@
   padding: 0;
 }
 
-/* List Item Styling */
-.user-orders-page li {
-  padding: 15px;
-  background-color: #3c3c3c; /* Slightly lighter background for list items */
-  margin: 10px 0;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-}
-
-/* Paragraph inside list items */
-.user-orders-page li p {
-  margin: 5px 0;
-  color: #ccc; /* Slightly lighter grey for list item text */
-}
-
 /* General Paragraph Styling */
 .user-orders-page p {
   text-align: center;
   font-size: 1.2rem;
-  color: #ccc; /* Slightly lighter grey text for paragraph */
+  color: #6b3f7d; /* Slightly lighter grey text for paragraph */
 }
 
 /* Accessibility Improvement: Smooth color transition */
