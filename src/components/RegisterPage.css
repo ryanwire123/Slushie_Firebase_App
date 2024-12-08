@@ -1,17 +1,16 @@
 /* src/components/RegisterPage.css */
 
 /* Register Page Container */
-.register-page {
+.register-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 0px;
     max-width: 400px;
     margin: 0 auto;
-    background-color: #f3db97; /* Light yellow background */
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
     color: #333; /* Dark text for readability */
+    padding-bottom: 20px;
 }
 
 /* Header Styling */
@@ -26,7 +25,6 @@
 .register-page input {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
     border-radius: 5px;
     border: 1px solid #933996; /* Purple border for inputs */
     background-color: #fff; /* White background for inputs */
@@ -51,11 +49,13 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    
 }
 
 /* Button Hover Effect */
 .register-page button:hover {
     background-color: #8b72c4; /* Slightly darker purple on hover */
+    
 }
 
 /* Disabled Button Styling */
@@ -66,13 +66,14 @@
 
 /* Input Focus Effect */
 .register-page input:focus {
-    border: 1px solid #8bdfa7; /* Green border on focus for better visibility */
+    border: 1px solid #933996; /* Green border on focus for better visibility */
     outline: none; /* Remove default outline */
 }
 
 /* Accessibility Improvement: Smooth color transition */
 .register-page * {
     transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    
 }
 
 /* Additional spacing for the inputs */
@@ -87,13 +88,13 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    
 }
 
 /* Styling for error messages */
 .register-page .error {
     color: #ff6f61; /* Red color for error messages */
     font-size: 12px;
-    margin-top: 5px;
 }
 
 /* Highlight color for important elements */
@@ -105,7 +106,5 @@
 .register-page .section-dark {
     background-color: #933996; /* Purple background for sections */
     color: white;
-    padding: 15px;
-    border-radius: 5px;
-    margin-top: 10px;
+    
 }
