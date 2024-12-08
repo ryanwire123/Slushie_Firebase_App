@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+// src/components/LoginPage.jsx
+
+import React, { useState, useContext } from 'react';
 import { auth } from '../firebase/firebaseConfig';
 import { useNavigate } from 'react-router-dom';
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { CustomerContext } from '../context/UserContext';  // Import CustomerContext
 import './LoginPage.css';
 
 const LoginPage = () => {
+  const { setCustomer } = useContext(CustomerContext);  // Access setCustomer from context
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -12,8 +16,17 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      navigate('/order');
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      
+      // After login, set customer info in the context
+      setCustomer({
+        uid: user.uid,
+        email: user.email,
+        // You can add other user details here as well (e.g., display name)
+      });
+
+      navigate('/order');  // Navigate to order page after successful login
     } catch (error) {
       console.error("Login failed: ", error.message);
     }
@@ -21,21 +34,21 @@ const LoginPage = () => {
 
   return (
     <div>
-      <h2>Customer Login</h2> {/* Changed "Login" to "Customer Login" to align with seed file */}
+      <h2>Customer Login</h2>
       <form onSubmit={handleLogin}>
-        <input 
-          type="email" 
-          value={email} 
-          onChange={(e) => setEmail(e.target.value)} 
-          placeholder="Email" 
-          required 
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
+          required
         />
-        <input 
-          type="password" 
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)} 
-          placeholder="Password" 
-          required 
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+          required
         />
         <button type="submit">Login</button>
       </form>
